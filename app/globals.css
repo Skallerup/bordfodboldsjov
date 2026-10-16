@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Baloo 2", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+}
+
+body {
+  background-color: #fff6e5;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(124, 92, 252, 0.08) 0, transparent 38%),
+    radial-gradient(circle at 88% 12%, rgba(255, 111, 165, 0.08) 0, transparent 34%),
+    radial-gradient(circle at 70% 85%, rgba(73, 198, 255, 0.08) 0, transparent 40%);
+  color: #262238;
+  min-height: 100vh;
+}
+
+@layer components {
+  .card-pop {
+    @apply bg-paper border-[3px] border-ink rounded-3xl shadow-pop;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border-2 border-ink px-3 py-1 text-xs font-bold uppercase tracking-wide;
+  }
+  .btn-pop {
+    @apply inline-flex items-center gap-2 rounded-2xl border-[3px] border-ink bg-mustard px-4 py-2 font-display font-extrabold text-ink shadow-pop-sm transition-transform hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-none;
+  }
+  .heading-xl {
+    @apply font-display font-extrabold leading-[0.95] tracking-tight;
+  }
+}
+
+/* Dotted comic halftone helper */
+.halftone {
+  background-image: radial-gradient(#26223822 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+
+/* Hide scrollbar for marquee rows but keep accessible */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
